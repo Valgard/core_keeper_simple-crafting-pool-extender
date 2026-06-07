@@ -141,8 +141,9 @@ Awake-Postfix path sidesteps the whole problem.
 
 The mod is deployed through the fake-mod.io workaround (see parent
 `../CLAUDE.md`). This mod's fake mod.io ID is **`9999995`** (the
-sibling `disable-durability` uses `9999999`, `faster-talents` uses
-`9999998`, `caveling-divining-rod` uses `9999996` — they must differ).
+siblings `disable-durability` uses `9999999`, `faster-talents` uses
+`9999998`, `item-checklist` uses `9999997`, `caveling-divining-rod` uses
+`9999996` — they must differ).
 Do not open the in-game Mods menu while a fake-ID install is active;
 re-run `../utils/build.sh` to restore if the cache is wiped.
 

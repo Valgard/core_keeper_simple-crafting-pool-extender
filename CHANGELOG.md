@@ -13,11 +13,11 @@ small and focused; the pre-1.0 framing leaves room for fast follow-ups
 
 ### Added
 
-- **On-demand pool growth.** Harmony Prefix on
-  `SimpleCraftingUIContainer.ShowCraftingUI`. When the active category needs
-  more windows than the vanilla 3-entry pool can supply, the patch clones the
-  last existing `SimpleCraftingUI` and appends it — up to `maxPoolSize` (5 by
-  default). Idempotent on subsequent opens.
+- **Pool growth.** Harmony Postfix on `SimpleCraftingUIContainer.Awake`.
+  Clones the last existing `SimpleCraftingUI` and appends it until the pool
+  reaches `maxPoolSize` (5 by default). Runs once per container, immediately
+  after Vanilla's `Init()` loop and before anything is rendered — so the
+  clone inherits the Inspector-default "all slots inactive" state.
 - **Nav-UI position fix for counts ≥ 4.** Harmony Postfix on
   `CraftingCategoryNavigationUI.LateUpdate`. The vanilla switch only covers
   1/2/3 windows; the patch extrapolates the formula
@@ -26,11 +26,3 @@ small and focused; the pre-1.0 framing leaves room for fast follow-ups
 - **Configurable maximum** via `unity/SimpleCraftingPoolExtender/ModConfig.cs`:
   `maxPoolSize = 5`. Singleton API shape preserved so a future safe-IO
   config-loader can drop in without touching the patches.
-
-### Side-effect-free for vanilla
-
-- Counts 1–3 stay at the exact vanilla positions (Postfix early-outs).
-- No pool growth happens until at least one mod-added item exceeds the
-  vanilla 18-slot limit.
-- The clone is a real `UnityEngine.Object.Instantiate` of the last existing
-  entry — styles, masks, and layout inherit cleanly.

@@ -1,0 +1,47 @@
+# macOS
+.DS_Store
+
+# Worktrees
+.worktrees/
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+
+# Build artifacts
+bin/
+obj/
+build/
+*.dll
+*.pdb
+
+# Unity (if SDK ends up vendored as submodule, ignore its generated dirs locally)
+Library/
+Temp/
+Logs/
+UserSettings/
+*.csproj
+*.sln
+
+# Env / secrets
+.env
+.envrc
+.envrc.local
+
+# Shared editor helpers — symlinked in by utils/link.sh when
+# USE_SHARED_EDITOR_HELPERS=1 (the .cs are symlinks into ../utils, the .meta
+# are Unity-generated locally; no asset references them by GUID, so neither
+# belongs in the repo).
+unity/SimpleCraftingPoolExtender/Editor/CLIBuildHelper.cs
+unity/SimpleCraftingPoolExtender/Editor/CLIBuildHelper.cs.meta
+unity/SimpleCraftingPoolExtender/Editor/CLIPublishHelper.cs
+unity/SimpleCraftingPoolExtender/Editor/CLIPublishHelper.cs.meta
+unity/SimpleCraftingPoolExtender/Editor/LocalizationGenerator.cs
+unity/SimpleCraftingPoolExtender/Editor/LocalizationGenerator.cs.meta
+
+# AI-generated sprite candidate iterations (throwaway; selected sprites move to unity/.../Art/)
+docs/sprite-candidates/
+
+# LocalizationGenerator output (regenerated each build from localization/localization.yaml)
+unity/SimpleCraftingPoolExtender/Localization/Generated/

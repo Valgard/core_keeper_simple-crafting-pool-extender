@@ -37,7 +37,7 @@ export MOD_SUMMARY="Helper mod that lets other mods add a 4th+ tab to vanilla Ir
 export FAKE_MOD_ID="9999995"
 
 # ModBuilder output staging dir (build.sh → install-macos.sh copies onward).
-export MOD_INSTALL_PATH="$HOME/Library/Caches/simple-crafting-pool-extender-build/"
+export MOD_INSTALL_PATH="$MOD_INSTALL_BASE_PATH/$MOD_NAME_ID-build"
 
 # Repo root, read by the shared CLIPublishHelper to locate CHANGELOG.md.
 export MOD_REPO_ROOT="$PWD"

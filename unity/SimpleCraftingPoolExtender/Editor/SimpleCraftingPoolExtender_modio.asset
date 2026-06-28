@@ -15,4 +15,5 @@ MonoBehaviour:
   modId: 6119747
   modSettings: {fileID: 11400000, guid: feba06cb36c84aa585538f59c90d017c, type: 2}
   logo: {fileID: 0}
-  summary: 
+  summary: Helper mod that lets other mods add a 4th+ tab to vanilla Iron/Wood/Copper/etc.
+    Crafting workbenches. Required by some craftable-item mods.
